@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Log-in</title>
+    
+</head>
+<body>
+    <header>
+        <input type="checkbox" name="" id="toggler">
+        <label for="toggler"class="fas fa-bars"></label>
+        <a href="#" class="logo">S'appeal</a>
+        
+        <div class="icons">
+            <a href="#" class="fas fa-user"></a>
+            
+        </div>
+    </header>
+    <fieldset>
+        <legend>Personal Information</legend>
+        <form id="myForm" action="index.html" method="get" onsubmit="event.preventDefault(); handleSubmit();">  
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="contactno">Contact No:</label>
+            <input type="text" id="contactno" name="contactno" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <button onclick="goToAnotherPage">Submit</button>
+        </form>
+    </fieldset>
+    <script>
+        function handleSubmit() {
+            // Submit the form
+            document.getElementById("myForm").submit();
+
+            // Redirect to home page
+            window.location.href = "index.html"; // Redirect after form submission
+        }
+    </script><br><br><br><br><br><br>
+    <footer>
+        <div class="footer-links">
+            
+            <p>Contact Info: contact@beautyglow.com</p>
+        </div>
+    </footer>
+</body>
+</html>
